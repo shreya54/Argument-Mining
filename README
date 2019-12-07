@@ -1,0 +1,38 @@
+
+Project - Argument Mining
+Google Drive Link - https://drive.google.com/drive/folders/1685IOQghOulLEc3aSggstD7eAPhdQqmX?usp=sharing
+
+
+Sample annotated text file in preprocessing folder
+Flow of running scripts--->
+
+1. Preprocessing script converting annotated data to conll format
+
+Go inside preprocessing folder.(complete annotated data in google drive link)
+
+python preprocessing.py annotated_data_foldername
+
+2.To run models:
+
+Go inside bilstm-crf folder and run
+
+to run on ESSAY-Level---> 
+****BIO sequence tagging**** 
+
+python bilstm-crf-bio.py ../preprocessing/processed_data/Essay_Level/train.dat ../glove.6B.100d.txt ../preprocessing/processed_data/Essay_Level/train.dat
+
+****Relation Prediction****
+
+python bilstm-crf-rel.py ../preprocessing/processed_data/Essay_Level/train.dat ../glove.6B.100d.txt ../preprocessing/processed_data/Essay_Level/train.dat
+
+to run on PARAGRAPH-Level--->
+****BIO sequence tagging****
+ 
+python bilstm-crf-bio.py ../preprocessing/processed_data/Essay_Level/train.dat ../glove.6B.100d.txt ../preprocessing/processed_data/Paragraph_Level/train.dat
+
+****Relation Prediction****
+
+python bilstm-crf-rel.py ../preprocessing/processed_data/Paragraph_Level/train.dat ../glove.6B.100d.txt ../preprocessing/processed_data/Paragraph_Level/train.dat
+
+3. Similarly to run other models go into the respective model folder and run the same command changing the python filename.
+
